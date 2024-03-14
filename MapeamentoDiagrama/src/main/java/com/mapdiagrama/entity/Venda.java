@@ -29,7 +29,11 @@ public class Venda {
 	@Column (name = "dataVenda", nullable = false)
 	private Date data_venda;
 	
-	@ManyToOne	(fetch = FetchType.LAZY)
+	@ManyToOne (fetch = FetchType.LAZY)
 	@JoinColumn(name = "id_cliente", nullable = false)
 	private Cliente cliente;
+
+	@OneToMany (fetch = FetchType.LAZY)
+	@JoinColumn(name = "id_itemVenda", nullable = false)
+	private ItemVenda itemVenda;
 }
